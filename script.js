@@ -43,32 +43,27 @@ function choice(pick) {
 function winConditions() {
     for(let i = 0; i < 9; i += 3) {
         if (emptyBoard[i] != 0 && emptyBoard[i+1] == emptyBoard[i] && emptyBoard[i + 2] == emptyBoard[i]) {
-            console.log("Vitória Horizontal")
             resetGame()
             return "Win"
         }
     }
     for (let i = 0; i < 9; i++) {
         if (emptyBoard[i] != 0 && emptyBoard[i+3] == emptyBoard[i] && emptyBoard[i+6] == emptyBoard[i]) {
-            console.log("Vitória Vertical")
             resetGame()
             return "Win"
         }
     } 
     if (emptyBoard[0] != 0 && emptyBoard[4] == emptyBoard[0] && emptyBoard[8] == emptyBoard[0]) {
-        console.log("Vitória Diagonal Principal")
         resetGame()
         return "Win"
     }
     
     else if (emptyBoard[2] != 0 && emptyBoard[4] == emptyBoard[2] && emptyBoard[6] == emptyBoard[2]) {
-        console.log("Vitória Diagonal Secundária")
         resetGame()
         return "Win"
     }
 
     if (totalTurns == 9) {
-        console.log("EMPATOU PORRAAAAA")
         resetGame()
         return "Draw"
     }
